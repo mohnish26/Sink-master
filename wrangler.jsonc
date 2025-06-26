@@ -10,7 +10,7 @@
   "compatibility_flags": [
     "nodejs_compat"
   ],
-  "nodejs_compat" = true,
+  "nodejs_compat" :true,
   "keep_vars": true,
   "upload_source_maps": true,
   "ai": {
