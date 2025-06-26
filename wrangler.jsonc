@@ -1,17 +1,19 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "sink",
-  "main": "dist/server/index.mjs",
-  "assets": {
-    "binding": "ASSETS",
-    "directory": "dist/public"
-  },
+  "main": "dist/_worker.js",  // Changed from dist/server/index.mjs
+  "pages_build_output_dir": "dist/public",  // Added for Pages compatibility
   "compatibility_date": "2025-05-08",
   "compatibility_flags": [
     "nodejs_compat"
   ],
+  "node_compat": true,  // Explicitly enable Node.js compatibility
   "keep_vars": true,
   "upload_source_maps": true,
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "dist/public"
+  },
   "ai": {
     "binding": "AI"
   },
@@ -24,7 +26,7 @@
   "kv_namespaces": [
     {
       "binding": "KV",
-      "id": "ac4128fcf9dc4a22858880930604ec76" // IMPORTANT: Change this to your KV namespace ID
+      "id": "ac4128fcf9dc4a22858880930604ec76"
     }
   ]
 }
